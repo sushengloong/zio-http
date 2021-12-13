@@ -8,9 +8,10 @@ import zio.duration.Duration
  */
 sealed trait SocketProtocol { self =>
   import SocketProtocol._
-  def ++(other: SocketProtocol): SocketProtocol = SocketProtocol.Concat(self, other)
-  def javaConfig: WebSocketServerProtocolConfig = {
+  def ++(other: SocketProtocol): SocketProtocol   = SocketProtocol.Concat(self, other)
+  def javaConfig(): WebSocketServerProtocolConfig = {
     val b = WebSocketServerProtocolConfig.newBuilder().checkStartsWith(true).websocketPath("")
+
     def loop(protocol: SocketProtocol): Unit = {
       protocol match {
         case Default                           => ()
@@ -27,6 +28,7 @@ sealed trait SocketProtocol { self =>
       }
       ()
     }
+
     loop(self)
     b.build()
   }

@@ -12,6 +12,7 @@ package object service {
   private[service] val FLOW_CONTROL_HANDLER               = "FLOW_CONTROL_HANDLER"
   private[service] val WEB_SOCKET_HANDLER                 = "WEB_SOCKET_HANDLER"
   private[service] val WEB_SOCKET_CLIENT_PROTOCOL_HANDLER = "WEB_SOCKET_CLIENT_PROTOCOL_HANDLER"
+  private[service] val CLIENT_SOCKET_HANDLER              = "CLIENT_SOCKET_HANDLER"
   private[service] val SSL_HANDLER                        = "SSL_HANDLER"
   private[service] val HTTP_ON_HTTPS_HANDLER              = "HTTP_ON_HTTPS_HANDLER"
   private[service] val HTTP_SERVER_CODEC                  = "HTTP_SERVER_CODEC"
